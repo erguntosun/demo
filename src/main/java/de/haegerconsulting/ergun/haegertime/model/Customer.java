@@ -9,14 +9,18 @@ public class Customer {
     @Column(name="ID")
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
+
     @Column(name="company", nullable = false, length = 50)
     private String company;
+
     @Column(name="prename", nullable = false, length = 50)
     private String prename;
+
     @Column(name="surname", nullable = false, length = 50)
     private String surname;
-    @Column(name="eMail", nullable = false, length = 50)
-    private String eMail;
+
+    @Column(name="mail", nullable = false, length = 50)
+    private String mail;
 
     public int getId() {
         return id;
@@ -50,21 +54,23 @@ public class Customer {
         this.surname = surname;
     }
 
-    public String geteMail() {
-        return eMail;
+    public String getMail() {
+        return mail;
     }
 
-    public void seteMail(String eMail) {
-        this.eMail = eMail;
+    public void setMail(String Mail) {
+        this.mail = mail;
     }
 
 
+    public Customer() {
+    }
 
-    public Customer(String company, String prename, String surname, String eMail) {
+    public Customer(String company, String prename, String surname, String mail) {
         this.company = company;
         this.prename = prename;
         this.surname = surname;
-        this.eMail = eMail;
+        this.mail = mail;
     }
 
 
