@@ -23,13 +23,24 @@ public class CustomerService  {
         return customerRepository.findById(id).get();
     }
 
-    public void saveOrUpdate(Customer customer)
+/*   public void saveOrUpdate(Customer customer)
     {
         customerRepository.save(customer);
+    }*/
+ /*public Customer saveOrUpdate(Customer customer){
+      return
+              customerRepository.save
+                      (customer);
+
+  }  */
+
+public List<Customer> saveOrUpdate(List<Customer> customers){
+        return customerRepository.saveAll(customers);
     }
     //deleting a specific record
     public void delete(int id)
     {
         customerRepository.deleteById(id);
     }
+
 }

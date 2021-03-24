@@ -1,6 +1,7 @@
 package de.haegerconsulting.ergun.haegertime.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="customer")
@@ -10,6 +11,7 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private int id;
 
+    @Size(min = 3, max = 20)
     @Column(name="company", nullable = false, length = 50)
     private String company;
 
@@ -19,8 +21,9 @@ public class Customer {
     @Column(name="surname", nullable = false, length = 50)
     private String surname;
 
+   /* @Size(min = 3, max = 50)
     @Column(name="mail", nullable = false, length = 50)
-    private String mail;
+    private String mail;*/
 
     public int getId() {
         return id;
@@ -54,13 +57,13 @@ public class Customer {
         this.surname = surname;
     }
 
-    public String getMail() {
+  /*  public String getMail() {
         return mail;
     }
 
     public void setMail(String Mail) {
         this.mail = mail;
-    }
+    }*/
 
 
     public Customer() {
@@ -70,7 +73,7 @@ public class Customer {
         this.company = company;
         this.prename = prename;
         this.surname = surname;
-        this.mail = mail;
+//        this.mail = mail;
     }
 
 

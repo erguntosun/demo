@@ -7,11 +7,19 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api")
+@RequestMapping("/api/")
 public class CustomerController {
     @Autowired
-    CustomerService customerService;
+    private CustomerService customerService;
 
+   /*@PostMapping("/Customer1")
+    public Customer addCustomer(@RequestBody Customer customer){
+        return customerService.saveOrUpdate(customer);
+    }*/
+   @PostMapping("/Customer")
+   public List<Customer> addCustomers(@RequestBody List<Customer> customers){
+       return customerService.saveOrUpdate(customers);
+   }
 
     @GetMapping("/Customer")
     private List<Customer> getAllCustomer()
@@ -31,11 +39,13 @@ public class CustomerController {
     {
         customerService.delete(id);
     }
+
     //creating post mapping that post the customer detail in the database
-    @PostMapping("/customer")
+   /* @PostMapping("/Customer")
     private int savecustomer(@RequestBody Customer customer)
     {
         customerService.saveOrUpdate(customer);
         return customer.getId();
-    }
+    }*/
+
 }
