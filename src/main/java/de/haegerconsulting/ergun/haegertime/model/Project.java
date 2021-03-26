@@ -11,6 +11,8 @@ public class Project {
     private int id;
 
     @Column(name="customer", nullable = false, length = 50)
+//    @ManyToOne
+//    @JoinColumn(name="PrId")
     private String customer;
 
     @Column(name="titel", nullable = true, length = 50)

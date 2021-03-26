@@ -2,6 +2,8 @@ package de.haegerconsulting.ergun.haegertime.model;
 
 import javax.persistence.*;
 import javax.validation.constraints.Size;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 @Table(name="customer")
@@ -11,15 +13,19 @@ public class Customer {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
 
-    @Size(min = 3, max = 20)
     @Column(name="company", nullable = false, length = 50)
     private String company;
 
+    @Size(min = 3, max = 20)
     @Column(name="prename", nullable = false, length = 50)
     private String prename;
 
     @Column(name="surname", nullable = false, length = 50)
     private String surname;
+
+    //@OneToMany(cascade = CascadeType.ALL, mappedBy = "customer",orphanRemoval = true)
+   // @JoinColumn(name="CsPr", referencedColumnName = "id")
+   // List<Project> projects = new ArrayList<>();
 
    /* @Size(min = 3, max = 50)
     @Column(name="mail", nullable = false, length = 50)

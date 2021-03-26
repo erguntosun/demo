@@ -16,6 +16,17 @@ CREATE TABLE project (
 	enddate VARCHAR(128) NOT NULL
 );
 
+DROP TABLE IF EXISTS user;
+CREATE TABLE user (
+    id   INT AUTO_INCREMENT PRIMARY KEY    ,
+    username VARCHAR(128) NOT NULL,
+	password VARCHAR(128) NOT NULL,
+	lastName VARCHAR(128) NOT NULL,
+    firstName VARCHAR(128) NOT NULL,
+    address VARCHAR(128) NOT NULL,
+	role VARCHAR(128) NOT NULL
+);
+
 
 INSERT INTO customer (company,prename,surname)VALUES ('Tosun Gmbh','Tosun','Ergun');
 INSERT INTO customer (company,prename,surname)VALUES ('Basak Gmbh','Tosun','Basak');
@@ -23,3 +34,6 @@ INSERT INTO customer (company,prename,surname)VALUES ('Basak Gmbh','Tosun','Basa
 INSERT INTO project (customer,titel,startdate,enddate)VALUES ('Ergun','Herr','01.01.2022','10.10.2022');
 INSERT INTO project (customer,titel,startdate,enddate)VALUES ('Basak','Frau','01.01.2022','10.10.2022');
 
+INSERT INTO user (username,password,lastName,firstName,address,role)VALUES ('oykut','pass1234','Tosun','Oyku','Portougisestr No 1 BNA','ADMIN');
+INSERT INTO user (username,password,lastName,firstName,address,role)VALUES ('cagant','pass1234','Tosun','Cagan','Baumstr No 1 Berlin','CONTROLLER');
+INSERT INTO user (username,password,lastName,firstName,address,role)VALUES ('aliveli','pass1234','Ali','Veli','Herrstr. No 1 Bonn','EMPLOYEE');
